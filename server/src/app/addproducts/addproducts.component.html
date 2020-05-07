@@ -1,0 +1,52 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <input id="cin" name="cin" type="file" (change)="fileChangeEvent($event)" placeholder="Upload a file..." multiple/>
+    <button type="submit" mat-button class="btn" (click) = "upload()">Upload Files</button>
+    <form novalidate #productForm="ngForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="Name" type="text" [(ngModel)]="product.name" name="name"  #name="ngModel" required>
+            <mat-error *ngIf="name.errors?.required">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" type="text" [(ngModel)]="product.description" name="description"  #description="ngModel" required>
+            <mat-error *ngIf="description.errors?.required">Description is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Price" type="text" [(ngModel)]="product.price" name="price"  #price="ngModel" required>
+            <mat-error *ngIf="price.errors?.required">Price is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="XSmall" type="number" [(ngModel)]="product.xsmall" name="xsmall"  #xsmall="ngModel" required>
+            <mat-error *ngIf="xsmall.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Small" type="number" [(ngModel)]="product.small" name="small"  #small="ngModel" required>
+            <mat-error *ngIf="small.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Medium" type="number" [(ngModel)]="product.medium" name="medium"  #medium="ngModel" required>
+            <mat-error *ngIf="medium.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Large" type="number" [(ngModel)]="product.large" name="large"  #large="ngModel" required>
+            <mat-error *ngIf="large.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="XLarge" type="number" [(ngModel)]="product.xlarge" name="xlarge"  #xlarge="ngModel" required>
+            <mat-error *ngIf="xlarge.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="XXLarge" type="number" [(ngModel)]="product.xxlarge" name="xxlarge"  #xxlarge="ngModel" required>
+            <mat-error *ngIf="xxlarge.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="XXXLarge" type="number" [(ngModel)]="product.xxxlarge" name="xxxlarge"  #xxxlarge="ngModel" required>
+            <mat-error *ngIf="xxxlarge.errors?.required">Quantity is required</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-button class="btn" [disabled]="productForm.invalid">Submit</button>
+    </form>
+    <button class="btn" routerLink = "/viewproducts">View All Products</button>
+</div>

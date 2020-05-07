@@ -1,0 +1,30 @@
+<mat-toolbar>
+    Signup
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<div *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div>
+
+<form novalidate #signupForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <p>
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username"  #username="ngModel" required>
+        <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+        <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button [disabled]="signupForm.form.invalid">Signup</button>
+  </mat-dialog-actions>
+</form>

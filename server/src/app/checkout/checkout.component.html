@@ -1,0 +1,34 @@
+<br>
+<br>
+<br>
+<div class="container-fluid" *ngIf = "cart || errMess">
+	<!-- <div class="col-md-5" *ngFor = "let prod of products">
+				<h1>{{prod.name}}</h1>
+	</div> -->
+	<div class="col-md-5 col-md-offset-2" *ngFor = "let product of cart.products">
+    <h2>{{product.name}}</h2>
+		<h2>{{product.quantity}}</h2>
+		<h2>{{product.size}}</h2>
+  </div>
+  <h1>Total : {{total}}</h1>
+	<div *ngIf="errMess">
+		<h2>Error</h2>
+		<h4>{{errMess}}</h4>
+	</div>
+	<div class="container">
+      <div class="row">
+        <h1>Proceed to Pay</h1>
+        <button (click)="pay()">Pay</button>
+      </div>
+    </div>
+    
+    
+    <form #form ngNoForm 
+    id="nonseamless" 
+    method="post"
+    name="redirect" 
+    action="https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction">
+<input type="hidden" id="encRequest" name="encRequest" [ngModel]="encRequest">
+<input type="hidden" name="access_code" id="access_code" [ngModel]="accessCode">
+</form>
+</div>

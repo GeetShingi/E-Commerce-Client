@@ -1,0 +1,53 @@
+<!-- <h1>
+	<a routerLink = "/home">Home</a>
+	<a routerLink = "/products">Products</a>
+	<a routerLink = "/cart">Cart</a>
+	<div onmouseenter="document.getElementById('sh').style.display = 'block'" onmouseleave="document.getElementById('sh').style.display = 'none'">
+		<input type="text" [(ngModel)]="query">
+			<ul id="sh">
+				<li *ngFor="let product  of products | filter : query" [routerLink] = "['/productdetail',product._id]" >{{product.name}}</li>
+			</ul>
+	</div>
+	<a *ngIf="!username" mat-button (click)="openLoginForm()">Login</a>
+	<a *ngIf="!username" mat-button (click)="openSignUpForm()">Signup</a>
+	<a *ngIf="username">{{username}}</a>
+    <a *ngIf="username" mat-button (click)="logOut()">Logout</a>
+</h1> -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button><p>
+      <a class="navbar-brand" href="#" >
+      <img alt="Logo" src="../assets/res/img/logo.png" style="width:50px;height: 30px;border-radius: 50%;float: left;padding-top: 0;top:-5px;position: relative;"/>&nbsp;E-Commerce</a></p>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink = "/home">HOME</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">OUR FABRICS
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a [routerLink] = "['home']" fragment = "worli">BANARASI BROCADE</a></li>
+            <li><a href="#worli">WORLI AND KALAMKARI</a></li>
+            <li><a href="#cotton">COTTON SILK IKKAT</a></li> 
+            <li><a href="#organza">ORGANZA FABRIC</a></li>
+            <li><a href="#ikkat">IKKAT FABRIC</a></li> 
+          </ul>
+        </li>
+        <li><a routerLink = "/products">Our Products</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a routerLink = "/cart">Cart</a></li>
+        <li><a *ngIf="!username" mat-button (click)="openLoginForm()">Login</a></li>
+		<li><a *ngIf="!username" mat-button (click)="openSignUpForm()">Signup</a></li>
+		<li><a *ngIf="username">{{username}}</a></li>
+	    <li><a *ngIf="username" mat-button (click)="logOut()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

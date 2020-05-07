@@ -1,0 +1,12 @@
+<br>
+<br>
+<br>
+<div *ngFor = "let orde of orders">
+  {{orde._id}}
+  <div *ngFor = "let ord of orde.orders">
+      {{ord.delivered}}
+    <div *ngFor = "let product of ord.products">
+      {{product.name}}
+    </div>
+  </div>
+</div>

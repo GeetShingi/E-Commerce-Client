@@ -1,0 +1,38 @@
+.full-width {
+    width: 95%
+}
+
+.half-width {
+    width: 45%
+}
+
+.form-size {
+    width: 75%
+}
+p{
+    text-align: start;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  select:invalid {
+      color: gray;
+  }
+/* ::ng-deep .mat-accent .mat-slider-thumb {
+    background-color: black;
+    color:white;
+} 
+::ng-deep .mat-accent .mat-slider-thumb-label {
+    background-color: black;
+    color:white;
+} 
+::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: black;
+    color:white;
+}  */

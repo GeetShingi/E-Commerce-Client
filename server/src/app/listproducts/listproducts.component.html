@@ -1,0 +1,30 @@
+<br><br><br>
+<div style="text-align: center;">
+<div class="title" id="product">WELCOME TO RAAGVASTRA</div>
+<hr width="70%;">
+  <div class="text" style="font-family: 'Montserrat', sans-serif;">
+  Discover our curated range of exquisite handlooms and fabric... Do let us know if we can be of any help! Browse our featured collections below, or use the menu to explore all our products.<br><br>
+
+</div>
+<br>
+<div class="title" id="banarasi">OUR PRODUCTS</div>
+<hr width="40%;"></div>
+<br>
+
+<div class="container">
+  
+  <div class="row">
+    <!--div class="col-md-1"></div-->
+    <div class="col-md-4" *ngFor = "let product of products">
+      <div class="thumbnail">
+        <img src="{{baseURL + 'images/' + product.image[0]}}" style="width:100%;height: 450px;">
+        <div class="caption" ><br>
+            <p> {{product.name}} <br></p>
+            <p> &#8377;{{product.price}} </p>
+            <button [routerLink] = "['/adminproductdetail',product._id]" class="btn">View</button>
+            <button (click) = "remove(product._id)" class="btn" style="float:right" onClick="window.location.reload();" >Remove</button>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
